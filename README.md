@@ -1,2 +1,2 @@
-# vagrant-boilerplate
-Configurable boilerplate project using Vagrant with shell, VirtualBox, Puppet and Chef provisioners.
+# Work In Progress
+This is a work in progress repo, not ready for release.  Files are missing or incomplete.  Use at your own discretion.

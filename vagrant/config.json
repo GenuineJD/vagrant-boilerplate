@@ -1,0 +1,35 @@
+{
+  "vm": {
+    "box" : "precise32",
+    "box_url" : "http://files.vagrantup.com/precise32.box",
+    "hostname" : "vagrant.dev",
+    "hostaliases" : [],
+    "hosts_remove_on_suspend" : true,
+    "ip": "192.168.32.32",
+    "memory": "1024",
+    "synced_folders": [
+      { "host_path": "www/", "guest_path": "/var/www", "type": "default" }
+    ],
+    "forwarded_ports": [
+      { "guest" : 3306, "host" : 3306, "protocol" : "tcp", "auto_correct" : true },
+      { "guest" : 9999, "host" : 9999, "protocol" : "tcp", "auto_correct" : true }
+    ]
+  },
+  "scripts" : {
+    "startup" : [
+      "vagrant/files/scripts/header.sh"
+    ],
+    "finish" : [
+      "vagrant/files/scripts/footer.sh",
+    ]
+  },
+  "provisioners" : [
+      {
+        "type" : "puppet",
+        "manifests_path" : "vagrant/puppet/manifests",
+        "module_path" : "vagrant/puppet/modules",
+        "manifest_file" : "init.pp",
+        "options" : "--verbose --debug"
+      }
+  ]
+}
