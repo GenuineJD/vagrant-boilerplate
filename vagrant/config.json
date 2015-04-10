@@ -1,7 +1,6 @@
 {
   "vm": {
-    "box" : "precise32",
-    "box_url" : "http://files.vagrantup.com/precise32.box",
+    "box" : "hashicorp/precise32",
     "hostname" : "vagrant.dev",
     "hostaliases" : [],
     "hosts_remove_on_suspend" : true,
@@ -17,10 +16,10 @@
   },
   "scripts" : {
     "startup" : [
-      "vagrant/files/scripts/header.sh"
+      "vagrant/shell/header.sh"
     ],
     "finish" : [
-      "vagrant/files/scripts/footer.sh",
+      "vagrant/shell/footer.sh"
     ]
   },
   "provisioners" : [
